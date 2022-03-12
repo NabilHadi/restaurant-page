@@ -1,5 +1,3 @@
-import "./style.css";
-console.log("hello worlds!");
+import loadPage from "./load-page";
 
-const contentDiv = document.querySelector("#content");
-contentDiv.classList.add("content");
+loadPage();
