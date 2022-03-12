@@ -1,6 +1,6 @@
 export default function loadMainPage(containerDiv) {
   const h1 = document.createElement("h1");
-  h1.textContent = "Restaurant Title";
+  h1.textContent = "Greatest Restaurant of all time";
   containerDiv.append(h1);
 
   const shortP = document.createElement("p");
