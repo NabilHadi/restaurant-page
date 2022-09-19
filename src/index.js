@@ -1,24 +1,36 @@
-// Root content Element
-const rootDiv = document.querySelector("#content");
+import "./style.css";
 
-// Tabs elements
-const tabsUl = document.createElement("ul");
-const homeTabLi = document.createElement("li");
-const menuTabLi = document.createElement("li");
-const contactTabLi = document.createElement("li");
+// Create and return Tab elements
+function createTabs() {
+  const tabsUl = document.createElement("ul");
+  tabsUl.classList.add("tabs-container");
 
-homeTabLi.textContent = "Home";
-menuTabLi.textContent = "Menu";
-contactTabLi.textContent = "Contact";
+  const homeTabLi = document.createElement("li");
+  const menuTabLi = document.createElement("li");
+  const contactTabLi = document.createElement("li");
 
-tabsUl.appendChild(homeTabLi);
-tabsUl.appendChild(menuTabLi);
-tabsUl.appendChild(contactTabLi);
+  homeTabLi.textContent = "Home";
+  menuTabLi.textContent = "Menu";
+  contactTabLi.textContent = "Contact";
 
-rootDiv.append(tabsUl);
+  tabsUl.appendChild(homeTabLi);
+  tabsUl.appendChild(menuTabLi);
+  tabsUl.appendChild(contactTabLi);
+  return tabsUl;
+}
 
-// Page Content div
-const pageContent = document.createElement("div");
-pageContent.textContent = "Page content";
+function onPageLoad() {
+  // Root content Element
+  const rootDiv = document.querySelector("#content");
+  // Add tabs
+  rootDiv.append(createTabs());
 
-rootDiv.append(pageContent);
+  // Page Content div
+  const pageContentContainer = document.createElement("div");
+  pageContentContainer.id = "page-content-container";
+  pageContentContainer.textContent = "Page content";
+  // Add page content container
+  rootDiv.append(pageContentContainer);
+}
+
+window.addEventListener("load", onPageLoad);
