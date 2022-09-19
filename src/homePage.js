@@ -1,25 +1,31 @@
 import { createElement } from "./utils";
 
 function loadHomePage(container) {
-  container.appendChild(
+  const homePageContainer = createElement({
+    classNames: ["home-page-container"],
+  });
+
+  homePageContainer.appendChild(
     createElement({
       tag: "h1",
       textContent: "Greatest Restaurant of all time",
     })
   );
 
-  container.appendChild(
+  homePageContainer.appendChild(
     createElement({
       textContent: "Why?",
     })
   );
 
-  container.appendChild(
+  homePageContainer.appendChild(
     createElement({
       tag: "p",
       textContent: "Because I said so.",
     })
   );
+
+  container.appendChild(homePageContainer);
 }
 
 export { loadHomePage };

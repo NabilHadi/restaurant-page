@@ -58,7 +58,7 @@ function onPageLoad() {
   // Add page content container
   rootDiv.append(pageContentContainer);
   // Load Home Page
-  loadHomePage(pageContentContainer);
+  loadMenuPage(pageContentContainer);
 }
 
 window.addEventListener("load", onPageLoad);

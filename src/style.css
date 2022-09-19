@@ -68,3 +68,31 @@ ul.tabs-container li:active {
   background-color: rgba(59, 57, 50, 0.808);
   padding: 1rem;
 }
+
+/* Home Page */
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Menu Page */
+.menu-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-container .grid-card {
+  border: 5px solid white;
+  padding: 1rem;
+}
+
+.menu-container .grid-card:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.menu-container .grid-card img {
+  width: 100px;
+}
