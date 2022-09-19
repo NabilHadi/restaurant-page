@@ -1,4 +1,6 @@
+import { loadContactPage } from "./contactPage";
 import { loadHomePage } from "./homePage";
+import { loadMenuPage } from "./menuPage";
 import "./style.css";
 
 let pageContentContainer;
@@ -36,6 +38,10 @@ function handleTabClick({ target }) {
   const tabName = target.dataset.tab;
   if (tabName === "home") {
     loadHomePage(pageContentContainer);
+  } else if (tabName === "menu") {
+    loadMenuPage(pageContentContainer);
+  } else if (tabName === "contact") {
+    loadContactPage(pageContentContainer);
   }
 }
 
@@ -48,9 +54,10 @@ function onPageLoad() {
   // Page Content div
   pageContentContainer = document.createElement("div");
   pageContentContainer.id = "page-content-container";
-  pageContentContainer.textContent = "Page content";
   // Add page content container
   rootDiv.append(pageContentContainer);
+  // Load Home Page
+  loadHomePage(pageContentContainer);
 }
 
 window.addEventListener("load", onPageLoad);
