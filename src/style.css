@@ -25,20 +25,46 @@ img {
 #content {
   flex: 1;
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: min-content 1fr;
+  background-image: url(./pexels-ella-olsson-1640777.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: color;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
 }
 
 ul.tabs-container {
-  background-color: antiquewhite;
   display: flex;
   justify-content: center;
   gap: 50px;
+  padding: 8px 16px;
+}
+
+ul.tabs-container li {
   padding: 1rem;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  transition: transform ease-in 0.1s;
+  user-select: none;
+}
+
+ul.tabs-container li:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+ul.tabs-container li:active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 #page-content-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 60%;
+  margin: 10% auto;
+  background-color: rgba(59, 57, 50, 0.808);
+  padding: 1rem;
 }

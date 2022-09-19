@@ -36,6 +36,7 @@ function handleTabClick({ target }) {
   if (!target.dataset.tab) return;
 
   const tabName = target.dataset.tab;
+  pageContentContainer.innerHTML = "";
   if (tabName === "home") {
     loadHomePage(pageContentContainer);
   } else if (tabName === "menu") {

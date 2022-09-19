@@ -1,10 +1,25 @@
-import img from "./pexels-ella-olsson-1640777.jpg";
+import { createElement } from "./utils";
 
 function loadHomePage(container) {
-  const image = new Image();
-  image.src = img;
-  container.textContent = "Home Page";
-  container.appendChild(image);
+  container.appendChild(
+    createElement({
+      tag: "h1",
+      textContent: "Greatest Restaurant of all time",
+    })
+  );
+
+  container.appendChild(
+    createElement({
+      textContent: "Why?",
+    })
+  );
+
+  container.appendChild(
+    createElement({
+      tag: "p",
+      textContent: "Because I said so.",
+    })
+  );
 }
 
 export { loadHomePage };
