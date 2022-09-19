@@ -1,4 +1,7 @@
+import { loadHomePage } from "./homePage";
 import "./style.css";
+
+let pageContentContainer;
 
 // Create and return Tab elements
 function createTabs() {
@@ -13,10 +16,27 @@ function createTabs() {
   menuTabLi.textContent = "Menu";
   contactTabLi.textContent = "Contact";
 
+  homeTabLi.dataset.tab = "home";
+  menuTabLi.dataset.tab = "menu";
+  contactTabLi.dataset.tab = "contact";
+
+  homeTabLi.addEventListener("click", handleTabClick);
+  menuTabLi.addEventListener("click", handleTabClick);
+  contactTabLi.addEventListener("click", handleTabClick);
+
   tabsUl.appendChild(homeTabLi);
   tabsUl.appendChild(menuTabLi);
   tabsUl.appendChild(contactTabLi);
   return tabsUl;
+}
+
+function handleTabClick({ target }) {
+  if (!target.dataset.tab) return;
+
+  const tabName = target.dataset.tab;
+  if (tabName === "home") {
+    loadHomePage(pageContentContainer);
+  }
 }
 
 function onPageLoad() {
@@ -26,7 +46,7 @@ function onPageLoad() {
   rootDiv.append(createTabs());
 
   // Page Content div
-  const pageContentContainer = document.createElement("div");
+  pageContentContainer = document.createElement("div");
   pageContentContainer.id = "page-content-container";
   pageContentContainer.textContent = "Page content";
   // Add page content container

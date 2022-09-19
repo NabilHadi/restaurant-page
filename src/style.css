@@ -18,6 +18,10 @@ ul {
   list-style: none;
 }
 
+img {
+  width: 100%;
+}
+
 #content {
   flex: 1;
   display: grid;
