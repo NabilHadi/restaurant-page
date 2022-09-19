@@ -96,3 +96,16 @@ ul.tabs-container li:active {
 .menu-container .grid-card img {
   width: 100px;
 }
+
+/* Contact Page */
+.contact-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: 1.5rem;
+  gap: 1rem;
+}
+
+.contact-page-container > * {
+  flex: 1;
+}
