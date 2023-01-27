@@ -1,5 +1,14 @@
 import "./style.css";
-import { loadContent, displayHomePage } from "./home";
-loadContent();
+import { loadContent, addTabBtnListener } from "./displayController";
+import { displayHomePage } from "./home";
 
-displayHomePage();
+const pageContetContainer = loadContent();
+displayHomePage(pageContetContainer);
+
+function handleTabBtnClick(event) {
+  const pageName = event.target.dataset.page;
+  if (!pageName) return;
+  console.log(pageName);
+}
+
+addTabBtnListener(handleTabBtnClick);

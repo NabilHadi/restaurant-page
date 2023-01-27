@@ -1,46 +1,6 @@
 import { createElement } from "./utils";
 
-const content = document.querySelector("#content");
-const headerNav = createElement({
-  tag: "nav",
-  classNames: ["header-nav"],
-});
-const homeBtn = createElement({
-  tag: "button",
-  classNames: ["tab-btn"],
-  textContent: "Home",
-  attributes: {
-    id: "home-btn",
-  },
-});
-const menuBtn = createElement({
-  tag: "button",
-  classNames: ["tab-btn"],
-  textContent: "Menu",
-  attributes: {
-    id: "menu-btn",
-  },
-});
-const contactBtn = createElement({
-  tag: "button",
-  classNames: ["tab-btn"],
-  textContent: "Contact",
-  attributes: {
-    id: "contact-btn",
-  },
-});
-const mainContainer = createElement({
-  tag: "main",
-  classNames: ["main-container"],
-});
-const pageContent = createElement({
-  tag: "section",
-  attributes: {
-    id: "page-content",
-  },
-});
-
-function displayHomePage() {
+function displayHomePage(pageContent) {
   const titleDiv = createElement({
     textContent: "My Restaurant",
     classNames: ["restaurant-title"],
@@ -57,10 +17,4 @@ function displayHomePage() {
   pageContent.append(titleDiv, descriptionDiv, hoursDiv);
 }
 
-function loadContent() {
-  headerNav.append(homeBtn, menuBtn, contactBtn);
-  mainContainer.append(pageContent);
-  content.append(headerNav, mainContainer);
-}
-
-export { loadContent, displayHomePage };
+export { displayHomePage };
