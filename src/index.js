@@ -2,6 +2,7 @@ import "./style.css";
 import { loadContent, addTabBtnListener } from "./displayController";
 import { displayHomePage } from "./home";
 import { displayMenuPage } from "./menu";
+import { displayContactPage } from "./contact";
 
 const pageContetContainer = loadContent();
 displayHomePage(pageContetContainer);
@@ -16,11 +17,12 @@ function handleTabBtnClick(event) {
   pageContetContainer.innerHTML = "";
   if (pageName === "home") {
     displayHomePage(pageContetContainer);
-    currentPage = pageName;
   } else if (pageName === "menu") {
     displayMenuPage(pageContetContainer);
-    currentPage = pageName;
+  } else {
+    displayContactPage(pageContetContainer);
   }
+  currentPage = pageName;
 }
 
 addTabBtnListener(handleTabBtnClick);
