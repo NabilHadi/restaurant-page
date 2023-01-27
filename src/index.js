@@ -1,14 +1,26 @@
 import "./style.css";
 import { loadContent, addTabBtnListener } from "./displayController";
 import { displayHomePage } from "./home";
+import { displayMenuPage } from "./menu";
 
 const pageContetContainer = loadContent();
 displayHomePage(pageContetContainer);
 
+let currentPage = "home";
+
 function handleTabBtnClick(event) {
   const pageName = event.target.dataset.page;
   if (!pageName) return;
-  console.log(pageName);
+  if (currentPage === pageName) return;
+
+  pageContetContainer.innerHTML = "";
+  if (pageName === "home") {
+    displayHomePage(pageContetContainer);
+    currentPage = pageName;
+  } else if (pageName === "menu") {
+    displayMenuPage(pageContetContainer);
+    currentPage = pageName;
+  }
 }
 
 addTabBtnListener(handleTabBtnClick);
