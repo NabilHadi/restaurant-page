@@ -1,4 +1,5 @@
 import { createElement } from "./utils";
+import mainImageSrc from "./pablo-merchan-montes-Orz90t6o0e4-unsplash.jpg";
 
 const content = document.querySelector("#content");
 const headerNav = createElement({
@@ -48,6 +49,13 @@ const pageContent = createElement({
     id: "page-content",
   },
 });
+const mainImage = createElement({
+  tag: "img",
+  attributes: {
+    id: "main-img",
+    src: mainImageSrc,
+  },
+});
 
 const tabBtnsListeners = [];
 
@@ -59,8 +67,10 @@ function handleTabBtnClick(event) {
 
 function loadContent() {
   headerNav.append(homeBtn, menuBtn, contactBtn);
+  mainContainer.append(headerNav);
   mainContainer.append(pageContent);
-  content.append(headerNav, mainContainer);
+  mainContainer.append(mainImage);
+  content.append(mainContainer);
 
   homeBtn.addEventListener("click", handleTabBtnClick);
   menuBtn.addEventListener("click", handleTabBtnClick);

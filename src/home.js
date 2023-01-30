@@ -1,20 +1,28 @@
 import { createElement } from "./utils";
 
-function displayHomePage(pageContent) {
+function displayHomePage(pageContent, menuBtnClickListener) {
   const titleDiv = createElement({
-    textContent: "My Restaurant",
+    tag: "h1",
+    textContent: "Cafe Lattétude",
     classNames: ["restaurant-title"],
   });
   const descriptionDiv = createElement({
-    textContent: "description of my restaurant",
-    classNames: ["restaurant-description"],
-  });
-  const hoursDiv = createElement({
-    textContent: "hours of my restaurant",
-    classNames: ["restaurant-hours"],
+    tag: "p",
+    textContent:
+      "If you have been looking to experience a cafe with a sincere commitment to quality – you have found it in Cafe Lattétude.",
+    classNames: ["restaurant-desc"],
   });
 
-  pageContent.append(titleDiv, descriptionDiv, hoursDiv);
+  const menuBtn = createElement({
+    tag: "button",
+    textContent: "Check Menu",
+    classNames: ["check-menu-btn"],
+    eventHandlers: {
+      click: menuBtnClickListener,
+    },
+  });
+
+  pageContent.append(titleDiv, descriptionDiv, menuBtn);
 }
 
 export { displayHomePage };

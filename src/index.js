@@ -4,8 +4,13 @@ import { displayHomePage } from "./home";
 import { displayMenuPage } from "./menu";
 import { displayContactPage } from "./contact";
 
+function checkMenuBtnHandler(event) {
+  console.log(event);
+  handleTabBtnClick({ target: { dataset: { page: "menu" } } });
+}
+
 const pageContetContainer = loadContent();
-displayHomePage(pageContetContainer);
+displayHomePage(pageContetContainer, checkMenuBtnHandler);
 
 let currentPage = "home";
 
@@ -16,7 +21,7 @@ function handleTabBtnClick(event) {
 
   pageContetContainer.innerHTML = "";
   if (pageName === "home") {
-    displayHomePage(pageContetContainer);
+    displayHomePage(pageContetContainer, checkMenuBtnHandler);
   } else if (pageName === "menu") {
     displayMenuPage(pageContetContainer);
   } else {
