@@ -58,7 +58,8 @@ function createMenuItem(itemName, price, imgSrc, desc) {
 
 function displayMenuPage(pageContent) {
   const titleDiv = createElement({
-    textContent: "",
+    tag: "h1",
+    textContent: "Menu",
     classNames: ["menu-title"],
   });
 
