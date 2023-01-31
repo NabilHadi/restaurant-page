@@ -15,6 +15,10 @@ img {
   max-width: 100%;
 }
 
+ul {
+  list-style: none;
+}
+
 #content {
   display: flex;
   flex-direction: column;
@@ -117,4 +121,42 @@ main #main-img {
 
 .check-menu-btn:hover {
   background-color: white;
+}
+
+ul.menu-item-list .menu-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  padding: 0.5rem;
+}
+
+ul.menu-item-list .menu-item:hover {
+  background-color: #1a181911;
+  border-radius: 10px;
+}
+
+ul.menu-item-list .menu-item .menu-item-name {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 3px dotted rgba(0, 0, 0, 0.355);
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+ul.menu-item-list .menu-item .menu-item-price {
+  font-size: 0.8rem;
+  color: #634523;
+}
+
+ul.menu-item-list .menu-item .menu-item-price::before {
+  content: "$";
+}
+
+ul.menu-item-list .menu-item .menu-item-desc {
+  font-size: 0.8rem;
 }

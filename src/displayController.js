@@ -1,5 +1,5 @@
 import { createElement } from "./utils";
-import mainImageSrc from "./pablo-merchan-montes-Orz90t6o0e4-unsplash.jpg";
+import mainImageSrc from "./images/pablo-merchan-montes-Orz90t6o0e4-unsplash.jpg";
 
 const content = document.querySelector("#content");
 const headerNav = createElement({
