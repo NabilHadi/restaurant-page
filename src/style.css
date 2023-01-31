@@ -11,7 +11,8 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-img {
+img,
+iframe {
   max-width: 100%;
 }
 
@@ -180,4 +181,12 @@ ul.menu-item-list .menu-item .menu-item-price::before {
 
 ul.menu-item-list .menu-item .menu-item-desc {
   font-size: 0.8rem;
+}
+
+.contact-number {
+  margin-top: 1rem;
+}
+
+.contact-email {
+  margin-bottom: 1rem;
 }

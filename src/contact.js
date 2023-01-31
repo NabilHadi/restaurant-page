@@ -1,45 +1,38 @@
 import { createElement } from "./utils";
 
 function displayContactPage(pageContent) {
-  const contactPageContainer = createElement({
-    classNames: ["contact-page-container"],
-  });
-  contactPageContainer.appendChild(
+  pageContent.appendChild(
     createElement({
       tag: "h1",
+      classNames: ["contact-header"],
       textContent: "Contact Us If you liked the food!",
     })
   );
 
-  contactPageContainer.appendChild(
+  pageContent.appendChild(
     createElement({
-      textContent: "555 555 555",
+      classNames: ["contact-number"],
+      textContent: "Our Number: 555 555 555",
     })
   );
 
-  contactPageContainer.appendChild(
+  pageContent.appendChild(
     createElement({
-      textContent: "Some place in earth",
+      classNames: ["contact-email"],
+      textContent: "Email: restaurant@greatest-restaurant.com",
     })
   );
 
-  contactPageContainer.appendChild(
-    createElement({
-      textContent: "restaurant@greatest-restaurant.com",
-    })
-  );
+  //
 
-  contactPageContainer.appendChild(
-    createElement({
-      tag: "img",
-      classNames: ["contact-img"],
-      attributes: {
-        src: "https://images.unsplash.com/photo-1596524430615-b46475ddff6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-      },
-    })
-  );
+  const contactLocation = createElement({
+    tag: "div",
+    classNames: ["contact-location"],
+  });
 
-  pageContent.appendChild(contactPageContainer);
+  contactLocation.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d829.2246511955803!2d150.69014483175067!3d-33.76328593058059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b128f539428dcf9%3A0x72e1e792958148e8!2sRon%20Stonestreet%20Pavilion!5e0!3m2!1sen!2seg!4v1675162165100!5m2!1sen!2seg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+
+  pageContent.appendChild(contactLocation);
 }
 
 export { displayContactPage };
