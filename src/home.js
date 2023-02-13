@@ -20,6 +20,9 @@ function displayHomePage(pageContent, menuBtnClickListener) {
     eventHandlers: {
       click: menuBtnClickListener,
     },
+    dataset: {
+      page: "menu",
+    },
   });
 
   pageContent.append(titleDiv, descriptionDiv, menuBtn);

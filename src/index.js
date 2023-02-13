@@ -1,27 +1,22 @@
 import "./style.css";
-import { loadContent, addTabBtnListener } from "./displayController";
+import DisplayController from "./displayController";
 import { displayHomePage } from "./home";
 import { displayMenuPage } from "./menu";
 import { displayContactPage } from "./contact";
 
-function checkMenuBtnHandler(event) {
-  console.log(event);
-  handleTabBtnClick({ target: { dataset: { page: "menu" } } });
-}
-
-const pageContetContainer = loadContent();
-displayHomePage(pageContetContainer, checkMenuBtnHandler);
+const pageContetContainer = DisplayController.loadContent();
+displayHomePage(pageContetContainer, handleTabChange);
 
 let currentPage = "home";
 
-function handleTabBtnClick(event) {
+function handleTabChange(event) {
   const pageName = event.target.dataset.page;
   if (!pageName) return;
   if (currentPage === pageName) return;
 
   pageContetContainer.innerHTML = "";
   if (pageName === "home") {
-    displayHomePage(pageContetContainer, checkMenuBtnHandler);
+    displayHomePage(pageContetContainer, handleTabChange);
   } else if (pageName === "menu") {
     displayMenuPage(pageContetContainer);
   } else {
@@ -30,4 +25,4 @@ function handleTabBtnClick(event) {
   currentPage = pageName;
 }
 
-addTabBtnListener(handleTabBtnClick);
+DisplayController.addTabBtnListener(handleTabChange);

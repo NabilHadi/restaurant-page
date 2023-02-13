@@ -83,4 +83,4 @@ function addTabBtnListener(func) {
   tabBtnsListeners.push(func);
 }
 
-export { loadContent, addTabBtnListener };
+export default { loadContent, addTabBtnListener };
